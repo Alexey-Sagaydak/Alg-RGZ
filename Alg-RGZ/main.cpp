@@ -1,8 +1,9 @@
 #include "suffixtree.hpp"
 
-// https://brenden.github.io/ukkonen-animation/
+// Visualization https://brenden.github.io/ukkonen-animation/
+// Source code   https://favtutor.com/blogs/ukkonen-algorithm-suffix-tree
 
 int main() {
-    SuffixTree("qwertyuiopasdfghjkl;zxcvbnm,./").visualize();
+    SuffixTree("Novosibirsk").visualize();
     return 0;
 }
