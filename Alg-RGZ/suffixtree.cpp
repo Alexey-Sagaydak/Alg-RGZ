@@ -1,7 +1,4 @@
 #include "suffixtree.hpp"
-#include <chrono>
-#include <iostream>
-#include <functional>
 
 Node::Node() {}
 
@@ -11,15 +8,16 @@ Node::Node(const std::string& sub, std::initializer_list<int> children)
 }
 
 SuffixTree::SuffixTree(const std::string& str) {
-    nodes.push_back(Node{});
-
     auto start = std::chrono::high_resolution_clock::now();
+    
+    nodes.push_back(Node{});
     for (size_t i = 0; i < str.length(); i++) {
         addSuffix(str.substr(i));
     }
+
     auto end = std::chrono::high_resolution_clock::now();
 
-    std::cout << "Total time: " << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " (microseconds)\n";
+    time_microseconds = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 }
 
 void SuffixTree::visualize() {

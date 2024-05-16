@@ -1,6 +1,8 @@
 #ifndef SUFFIXTREE_H
 #define SUFFIXTREE_H
-
+#include <chrono>
+#include <iostream>
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -14,6 +16,7 @@ struct Node {
 
 class SuffixTree {
 public:
+    int time_microseconds;
     SuffixTree(const std::string& str);
     void visualize();
 
